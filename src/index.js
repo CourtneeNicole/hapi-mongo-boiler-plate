@@ -4,6 +4,9 @@ import Relish from 'relish'
 import Pkg from '../package'
 import MongoPlugin from './plugins/mongo'
 import SenatePlugin from './plugins/senate'
+import JewelryPlugin from './plugins/Jewelry'
+import HairStylesPlugin from './plugins/Hairstyles'
+import MakeupPlugin from './plugins/Makeup'
 
 const relish = Relish()
 
@@ -71,7 +74,10 @@ const defaultPlugins = async server => {
 const customPlugins = async server => {
   const plugins = [
     { plugin: MongoPlugin, options: { mongoUri } },
-    { plugin: SenatePlugin }
+    { plugin: SenatePlugin },
+    { plugin: JewelryPlugin },
+    { plugin: HairStylesPlugin},
+    { plugin: MakeupPlugin}
   ]
   
   await server.register(plugins)
